@@ -1,0 +1,4 @@
+let mapleader = ","
+source ~/.vim_runtime/my_configs.vim
+
+:nnoremap <leader>w :w<cr>

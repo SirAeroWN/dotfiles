@@ -1,0 +1,14 @@
+LC_ALL=C
+
+nmcli con up id wahoo
+
+while [ "$(nmcli -t -f WIFI g)" == "disconnected" ]
+do
+	echo "sleeping"
+	sleep 5
+	nmcli con up id wahoo
+done
+
+hostname -I
+
+exit 0

@@ -1,0 +1,2 @@
+clang++ -Wall -g $1
+lldb a.out

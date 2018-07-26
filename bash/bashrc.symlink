@@ -1,0 +1,7 @@
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+function sla-admin() {
+  /Users/wnorvel2/sla-admin/sla-admin "$@"
+}
+
+export PATH="/Users/wnorvel2/bin/sla-admin:$PATH"

@@ -1,0 +1,9 @@
+for name in "$@"; do
+	if [ "$name" == "Makefile" ]; then
+		touch "$(pwd)/$name"
+		echo $'#Will Norvelle\n#wmn2bz\n#'"$(date +%D)" $'\n#'"$name" > $name
+	else
+		touch "$(pwd)/$name"
+		echo $'//Will Norvelle\n//wmn2bz\n//'"$(date +%D)" $'\n//'"$name" > $name
+	fi
+done

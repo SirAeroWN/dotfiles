@@ -1,0 +1,2 @@
+clang++  *.cpp
+./a.out $1
