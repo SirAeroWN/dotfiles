@@ -2,7 +2,9 @@ echo "loading bash configs..."
 export DOTHOME="$HOME/.dotfiles"
 source "$DOTHOME/git/git-prompt.sh"
 source ~/.bashrc
-source "$DOTHOME/bash/bash_path.sh"
+source "$DOTHOME/bash/path.sh"
+source "$DOTHOME/bash/aliases.sh"
+source "$DOTHOME/bash/functions.sh"
 
 set -o vi
 export VISUAL="vim"
@@ -14,17 +16,6 @@ bind '"\e[B":history-search-forward'
 
 # colorize ls output
 export CLICOLOR=1
-
-### stuff from cassidoo ###
-alias reload='source ~/.bash_profile'
-alias a='echo "------------Your aliases------------";alias'
-alias sa='source ~/.bashrc;echo "Bash aliases sourced."'
-alias bp='vim ~/.bash_profile'
-
-# Git Stuff
-alias co='git checkout'
-alias st='git status'
-alias yolo='git status && git add -A && git commit -m "I do what I want" && git push origin master'
 
 ## Add line before each terminal command
 fill="-- "
@@ -79,9 +70,11 @@ fmt_time () { #format time just the way I likes it
     fi
     date +"%l:%M:%S$meridiem"|sed 's/ //g'
 }
+
 pwdtail () { #returns the last 2 fields of the working directory
     pwd|awk -F/ '{nlast = NF -1;print $nlast"/"$NF}'
 }
+
 chkload () { #gets the current 1m avg CPU load
     local CURRLOAD=`uptime|awk '{print $8}'`
     if [ "$CURRLOAD" > "1" ]; then
@@ -95,42 +88,6 @@ chkload () { #gets the current 1m avg CPU load
 }
 
 
-# send a notification
-noty() {
-    osascript -e 'display notification "your thing is done" with title "Done"'
-}
-
-spell() {
-  echo "$@" | aspell list | sort -u
-}
-
-# Filesystem Stuff
-alias l='ls -F'
-alias la='ls -aF'
-alias ll='ls -lhAF'
-alias ..='cd ..'
-alias ...='cd ../../'
-
-
-### mine ###
-alias v="vim"
-alias vi="vim"
-alias vip="vim -p"
-alias svi="sudo vim"
-alias update="sudo apt update && sudo apt upgrade"
-alias root="sudo -i"
-alias su="sudo -i"
-alias howdoi="howdoi --color --all"
-alias mvnci="mvn clean install"
-alias mvnstci="mvn -DskipTests=True clean install"
-alias hdi="hdiutil"
-alias hdid="hdiutil detach"
-alias bfg="java -jar ~/bin/bfg.jar"
-alias vic="vim ~/.vim_runtime/my_configs.vim"
-alias path='echo -e ${PATH//:/\\n}'
-
-
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 #test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
