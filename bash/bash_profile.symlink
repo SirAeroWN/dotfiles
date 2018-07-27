@@ -99,3 +99,4 @@ if [[ -f "$( brew --prefix )/etc/bash_completion.d/git-completion.bash" ]]; then
     __git_complete st _git_status
 fi
 
+export EDITOR="vim"
