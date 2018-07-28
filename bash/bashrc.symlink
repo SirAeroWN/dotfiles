@@ -1,6 +1,9 @@
+if [[ -f $HOME/.bash_profile ]]; then
+  source $HOME/.bash_profile
+else
+  if [[ -f $HOME/.bashrc.backup ]]; then
+    source $HOME/.bashrc.backup
+  fi
+fi
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-function sla-admin() {
-  /Users/wnorvel2/sla-admin/sla-admin "$@"
-}
-

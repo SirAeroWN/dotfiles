@@ -1,10 +1,10 @@
 echo "loading bash configs..."
 export DOTHOME="$HOME/.dotfiles"
 source "$DOTHOME/git/git-prompt.sh"
-source ~/.bashrc
 source "$DOTHOME/bash/path.sh"
 source "$DOTHOME/bash/aliases.sh"
 source "$DOTHOME/bash/functions.sh"
+echo "done sourcing dotfiles"
 
 set -o vi
 export VISUAL="vim"
@@ -88,15 +88,23 @@ chkload () { #gets the current 1m avg CPU load
 }
 
 
-#test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
+#echo "mac stuff"
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-if [[ -f "$( brew --prefix )/etc/bash_completion.d/git-completion.bash" ]]; then
-    source "$( brew --prefix )/etc/bash_completion.d/git-completion.bash"
-
-    __git_complete co _git_checkout
-    __git_complete st _git_status
-fi
+#echo "1"
+#if [[ -f "$( brew --prefix )/etc/bash_completion.d/git-completion.bash" ]]; then
+#    echo "2"
+#    source "$( brew --prefix )/etc/bash_completion.d/git-completion.bash"
+#
+#    echo "3"
+#    __git_complete co _git_checkout
+#    __git_complete st _git_status
+#fi
+#echo "4"
 
 export EDITOR="vim"
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+echo "done"
+
