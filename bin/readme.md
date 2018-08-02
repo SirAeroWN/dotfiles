@@ -16,3 +16,7 @@ peco - https://github.com/peco/peco/tree/v0.5.3
 jq - https://stedolan.github.io/jq/
 gifme - https://github.com/holman/gifme
 aspell
+yank - https://github.com/mptre/yank
+tig
+ranger - https://github.com/ranger/ranger
+fpp - https://github.com/facebook/pathpicker/
