@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+
+# implements the Damerau-Levenshtein algorithm for finding the edit distance between two strings
+# essentially just a translation from the C code found in git (https://github.com/fabiensanglard/git/blob/master/levenshtein.c) to python
+
+import sys
+from icecream import ic
+from copy import deepcopy
+
+
+def levenshtein(s1, s2, w, s, a, d):
+    len1 = len(s1)
+    len2 = len(s2)
+
+    row0 = [0] * (len2 + 1)
+    row1 = [0] * (len2 + 1)
+    row2 = [0] * (len2 + 1)
+
+    j = 0
+    while (j <= len2):
+        row1[j] = j * a;
+        j += 1
+
+    i = 0
+    while (i < len1):
+        row2[0] = (i + 1) * d
+        j = 0
+        while (j < len2):
+            # substitution
+            row2[j + 1] = row1[j] + s * (1 if s1[i] != s2[j] else 0)
+            # swap
+            if i > 0 and j > 0 and s1[i-1] == s2[j] and s1[i] == s2[j-1] and row2[j+1] > row0[j-1]+w:
+                row2[j+1] = row0[j-1] + w
+            # deletion
+            if row2[j+1] > row1[j+1]+d:
+                row2[j+1] = row1[j+1] + d
+            # insertion
+            if row2[j+1] > row1[j+1]+a:
+                row2[j+1] = row1[j+1] + a
+            j += 1
+
+        temp = deepcopy(row0)
+        row0 = deepcopy(row1)
+        row1 = deepcopy(row2)
+        row2 = deepcopy(temp)
+        i += 1
+
+    i = row1[len2]
+
+    return i
+
+
+if __name__ == '__main__':
+    print(levenshtein(sys.argv[1], sys.argv[2], 1, 1, 1, 1))
