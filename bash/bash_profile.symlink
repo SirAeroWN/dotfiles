@@ -30,6 +30,15 @@ command_style=$reset_style'\[\033[1;29m\]' # bold black
 # (this one is invoked every time before a command is executed):
 trap 'echo -ne "\033[00m"' DEBUG
 
+# Determine active Python virtualenv details.
+function set_virtualenv () {
+  if test -z "$VIRTUAL_ENV" ; then
+      PYTHON_VIRTUALENV=""
+  else
+      PYTHON_VIRTUALENV="${BLUE}( `basename \"$VIRTUAL_ENV\"` )${COLOR_NONE} "
+  fi
+}
+
 function prompt_command {
   # create a $fill of all screen width minus the time string and a space:
   let fillsize=${COLUMNS}-20
@@ -55,7 +64,8 @@ function prompt_command {
   local RED="\[\033[0;31m\]"
   # return color to Terminal setting for text color
   local DEFAULT="\[\033[0;39m\]"
-  export PS1="$status_style"'$fill \t\n'"\[${TITLEBAR}\]${CYAN}[ ${BCYAN}\u${GREEN}@${BCYAN}\h:${GRAY}\w ${CYAN}]\n${GREEN}${BRANCH}${DEFAULT}$ "
+  set_virtualenv
+  export PS1="$status_style"'$fill \t\n'"\[${TITLEBAR}\]${CYAN}[ ${BCYAN}\u${GREEN}@${BCYAN}\h:${GRAY}\w ${CYAN}]\n${PYTHON_VIRTUALENV}${GREEN}${BRANCH}${DEFAULT}$ "
 }
 PROMPT_COMMAND=prompt_command
 
