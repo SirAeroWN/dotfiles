@@ -20,3 +20,4 @@ yank - https://github.com/mptre/yank
 tig
 ranger - https://github.com/ranger/ranger
 fpp - https://github.com/facebook/pathpicker/
+mmv - for batch file renameing and moving
