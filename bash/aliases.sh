@@ -38,6 +38,9 @@ alias svi="sudo vim"
 alias vic="vim ~/.vim_runtime/my_configs.vim"
 alias va="vim $DOTHOME/bash/aliases.sh"
 
+### neovim ###
+alias nv="nvim"
+
 
 ### updates ###
 alias update="sudo apt update && sudo apt upgrade"
