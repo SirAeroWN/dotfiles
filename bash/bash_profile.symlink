@@ -120,3 +120,5 @@ echo "done"
 
 # disable ctrl+s freezing everything
 stty -ixon
+
+export PATH="$PATH:/home/norv/.local/bin"
