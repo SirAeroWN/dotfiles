@@ -23,11 +23,18 @@ if [ -f /usr/share/bash-completion/completions/git ]; then
 fi
 
 # Filesystem Stuff
-alias l='ls -F'
-alias la='ls -aF'
-alias ll='ls -lhAF'
+# alias l='ls -F'
+# alias la='ls -aF'
+# alias ll='ls -lhAF'
 alias ..='cd ..'
 alias ...='cd ../../'
+
+# using exa instead of ls
+alias l='exa'
+alias la='exa --all'
+alias ll='exa --all --long'
+alias lt='exa --tree --level=5'
+alias lg='exa --all --long --git'
 
 
 ### vim ###
