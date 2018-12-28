@@ -26,9 +26,6 @@ alias ...='cd ../../'
 # using exa instead of ls
 
 
-
-
-
 ### updates ###
 alias update="sudo apt update && sudo apt upgrade"
 
@@ -55,3 +52,5 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 ### other ###
 alias path='echo -e ${PATH//:/\\n}'
 alias ba='vim ~/.dotfiles/bash/aliases.sh'
+alias pe='path-extractor'
+alias pf='path-extractor | sort -u | fzf'

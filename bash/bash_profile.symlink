@@ -132,7 +132,14 @@ export EDITOR="vim"
 # disable ctrl+s freezing everything (only if we're in a interactive shell)
 [[ $- == *i* ]] && stty -ixon
 
+[[ $- == *i* ]] && [ -f /usr/share/autojump/autojump.sh ] && source /usr/share/autojump/autojump.sh
+
+[[ $- == *i* ]] && [ -f $DOTHOME/bash/forgit.plugin.sh ] && source $DOTHOME/bash/forgit.plugin.sh
+
+export GOPATH="$HOME/Libs/go"
+
 export PATH="$PATH:/home/norv/.local/bin"
+export PATH="$PATH:$GOPATH/bin"
 
 export HISTCONTROL=ignoreboth:erasedups
 
