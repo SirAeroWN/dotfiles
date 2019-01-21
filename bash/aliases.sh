@@ -17,9 +17,6 @@ done
 # Git Stuff
 
 # Filesystem Stuff
-# alias l='ls -F'
-# alias la='ls -aF'
-# alias ll='ls -lhAF'
 alias ..='cd ..'
 alias ...='cd ../../'
 
