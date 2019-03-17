@@ -32,7 +32,7 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-sidebar'
 set -g @plugin 'tmux-plugins/tmux-yank'
 
-set -g @sidebar-tree-command 'tree -C -L 5'
+set -g @sidebar-tree-command 'tree -C -L 3'
 
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
