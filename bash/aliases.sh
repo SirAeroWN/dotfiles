@@ -60,3 +60,5 @@ alias pip="python3 -m pip"
 alias pe='path-extractor'
 alias pf='path-extractor | sort -u | fzf'
 alias open='xdg-open'
+alias shrug="echo \"¯\\_(ツ)_/¯\" | xclip -sel clip"
+alias tableflip="echo \"(╯°□°）╯︵ ┻━┻\" | xclip -sel clip"
