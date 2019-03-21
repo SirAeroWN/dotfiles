@@ -52,5 +52,3 @@ alias ba='vim ~/.dotfiles/bash/aliases.sh'
 alias pe='path-extractor'
 alias pf='path-extractor | sort -u | fzf'
 alias open='xdg-open'
-alias shrug="echo \"¯\\_(ツ)_/¯\" | xclip -sel clip"
-alias tableflip="echo \"(╯°□°）╯︵ ┻━┻\" | xclip -sel clip"
