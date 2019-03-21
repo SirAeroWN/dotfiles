@@ -9,37 +9,18 @@ alias a='echo "------------Your aliases------------";alias'
 alias sa='source ~/.dotfiles/bash/aliases.sh;echo "Bash aliases sourced."'
 alias bp='vim ~/.bash_profile'
 
+# source program specific aliases
+for f in $DOTHOME/bash/aliases/*.sh; do
+  source "$f"
+done
 
 # Git Stuff
-alias co='git checkout'
-alias st='git status'
-alias yolo='git status && git add -A && git commit -m "I do what I want" && git push origin master'
-
-# add bash autocomplete to git aliases (hopefully)
-if [ -f /usr/share/bash-completion/completions/git ]; then
-  source /usr/share/bash-completion/completions/git
-  __git_complete co _git_checkout
-  __git_complete st _git_status
-fi
 
 # Filesystem Stuff
-alias l='ls -F'
-alias la='ls -aF'
-alias ll='ls -lhAF'
 alias ..='cd ..'
 alias ...='cd ../../'
 
-
-### vim ###
-alias v="vim"
-alias vi="vim"
-alias vip="vim -p"
-alias svi="sudo vim"
-alias vic="vim ~/.vim_runtime/my_configs.vim"
-alias va="vim $DOTHOME/bash/aliases.sh"
-
-### neovim ###
-alias nv="nvim"
+# using exa instead of ls
 
 
 ### updates ###
@@ -56,8 +37,6 @@ alias howdoi="howdoi --color --all"
 
 
 ### maven ###
-alias mvnci="mvn clean install"
-alias mvnstci="mvn -DskipTests=True clean install"
 
 
 ### mac specific ###
@@ -78,3 +57,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 ### python ###
 alias pip="python3 -m pip"
+alias pe='path-extractor'
+alias pf='path-extractor | sort -u | fzf'
+alias open='xdg-open'

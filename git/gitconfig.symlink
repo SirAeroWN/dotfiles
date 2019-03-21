@@ -33,3 +33,5 @@
         default = simple
 [http]
 	postBuffer = 524288000
+[icdiff]
+	options = --highlight --line-numbers

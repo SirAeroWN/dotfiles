@@ -1,0 +1,7 @@
+windows:
+  - name: remappy
+    root: ~/Code/evdev
+    layout: even-horizontal
+    panes:
+      - commands:
+        - python3 parser.py mappings/mappings.json
