@@ -19,8 +19,15 @@ done
 # Filesystem Stuff
 alias ..='cd ..'
 alias ...='cd ../../'
+alias ....='_cdback 4'
+alias .....='_cdback 5'
+alias ......='_cdback 6'
+alias .......='_cdback 7'
+alias ........='_cdback 8'
 
-# using exa instead of ls
+
+### date stuff ###
+alias utc="TZ=UTC date +%s"
 
 
 ### updates ###
@@ -34,9 +41,6 @@ alias su="sudo -i"
 
 ### helps ###
 alias howdoi="howdoi --color --all"
-
-
-### maven ###
 
 
 ### mac specific ###
