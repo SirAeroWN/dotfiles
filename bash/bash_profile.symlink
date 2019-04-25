@@ -141,7 +141,8 @@ export GOPATH="$HOME/Libs/go"
 export PATH="$PATH:/home/norv/.local/bin"
 export PATH="$PATH:$GOPATH/bin"
 
-export HISTCONTROL=ignoreboth:erasedups
+export HISTCONTROL=ignorespace:erasedups
+export HISTSIZE=10000
 
 echo "done"
 

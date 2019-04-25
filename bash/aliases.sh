@@ -24,6 +24,7 @@ alias .....='_cdback 5'
 alias ......='_cdback 6'
 alias .......='_cdback 7'
 alias ........='_cdback 8'
+alias cdu='_cdback'
 
 
 ### date stuff ###
