@@ -3,7 +3,9 @@ case $( uname | tr '[:upper:]' '[:lower:]' ) in
     XCLIP=$(command -v xclip)
     [[ $XCLIP ]] && \
     alias pbcopy="$XCLIP -selection clipboard" && \
-    alias pbpaste="$XCLIP -selection clipboard -o"
+    alias pbpaste="$XCLIP -selection clipboard -o" && \
+    alias shrug="echo \"¯\\_(ツ)_/¯\" | $XCLIP -selection clipboard" && \
+    alias tableflip="echo \"(╯°□°）╯︵ ┻━┻\" | $XCLIP -selection clipboard"
     ;;
 esac
 

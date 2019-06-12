@@ -9,6 +9,7 @@
         wtf     = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
+	ctags = !.git/hooks/ctags
 [color]
         diff = auto
         status = auto
@@ -35,3 +36,5 @@
 	postBuffer = 524288000
 [icdiff]
 	options = --highlight --line-numbers
+[init]
+	templatedir = ~/.git_template

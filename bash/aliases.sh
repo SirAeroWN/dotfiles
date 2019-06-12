@@ -19,8 +19,16 @@ done
 # Filesystem Stuff
 alias ..='cd ..'
 alias ...='cd ../../'
+alias ....='_cdback 4'
+alias .....='_cdback 5'
+alias ......='_cdback 6'
+alias .......='_cdback 7'
+alias ........='_cdback 8'
+alias cdu='_cdback'
 
-# using exa instead of ls
+
+### date stuff ###
+alias utc="TZ=UTC date +%s"
 
 
 ### updates ###
@@ -34,9 +42,6 @@ alias su="sudo -i"
 
 ### helps ###
 alias howdoi="howdoi --color --all"
-
-
-### maven ###
 
 
 ### mac specific ###
@@ -60,5 +65,4 @@ alias pip="python3 -m pip"
 alias pe='path-extractor'
 alias pf='path-extractor | sort -u | fzf'
 alias open='xdg-open'
-alias shrug="echo \"¯\\_(ツ)_/¯\" | xclip -sel clip"
-alias tableflip="echo \"(╯°□°）╯︵ ┻━┻\" | xclip -sel clip"
+alias off='shutdown now'
