@@ -28,12 +28,18 @@ md() {
 # after having backed out $1 levels
 _cdback() {
     local _count
+    local updir=""
     test -n "$1" && _count="$1" || _count="1"
     while [[ "$_count" > 0 ]]; do
-        cd ..
+        updir="../$updir"
         _count=$((_count - 1))
     done
+    cd "$updir"
     test -n "$2" && cd "$2"
+}
+
+cdb() {
+  _cdback $@
 }
 
 epoch() {
