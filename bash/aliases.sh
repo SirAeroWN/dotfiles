@@ -24,8 +24,10 @@ alias .....='_cdback 5'
 alias ......='_cdback 6'
 alias .......='_cdback 7'
 alias ........='_cdback 8'
-alias cdu='_cdback'
 
+alias falc="cd /c/FALCOR/software"
+alias mbr="cd /c/FALCOR/software/Websites/Web/customer-ember"
+alias mbrd="cd /c/FALCOR/software/Websites/Web/ember-development/projects/report-webviews"
 
 ### date stuff ###
 alias utc="TZ=UTC date +%s"

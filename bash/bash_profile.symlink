@@ -175,4 +175,5 @@ unalias for
 unalias break
 unalias forelse
 
-eval $(thefuck --alias)
+export FALC="/c/FALCOR/software"
+export REVIEW_BASE=develop git review
